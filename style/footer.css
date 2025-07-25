@@ -1,0 +1,7 @@
+.footer-content {
+    background-color: var(--grey);
+}
+
+.footer-content .lead {
+    color: var(--white);
+}

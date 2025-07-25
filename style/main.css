@@ -1,0 +1,636 @@
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--white);
+}
+
+button, a {
+    font-family: 'Comfortaa', cursive;
+}
+
+h3 {
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Scada', sans-serif;
+}
+
+li b {
+    font-weight: 700;
+}
+
+.sponsor {
+    width: 200px;
+    height: 150px;
+}
+
+.sponsor img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.sponsors_container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    
+    justify-content: center;
+}
+
+.sponsors_block, .game_around_start {
+    background-color: var(--orange);
+}
+
+.sponsors_start {
+    width: 100%;
+    height: 10vw;
+    display: flex;
+    -webkit-box-pack: end !important;
+    -ms-flex-pack: end !important;
+    justify-content: flex-end !important;
+    background-image: url(https://vynosmozga.ru/img/wave7.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.wrapper_image_hero {
+    width: 100%;
+    margin: 0;
+    height: 600px;
+    background-image: url('https://vynosmozga.ru/img/back-reg.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.social_wrapper {
+    width: 100%;
+    height: 9vw;
+    display: flex;
+    -webkit-box-pack: end!important;
+    -ms-flex-pack: end!important;
+    justify-content: flex-end!important;
+    background-image: url('https://vynosmozga.ru/img/wave1.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.reviews_wrapper {
+    width: 100%;
+    height: 14vw;
+    display: flex;
+    -webkit-box-pack: end!important;
+    -ms-flex-pack: end!important;
+    justify-content: flex-end!important;
+    background-image: url('https://vynosmozga.ru/img/wave2.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.after_reviews_wrapper {
+    width: 100%;
+    height: 14vw;
+    display: flex;
+    -webkit-box-pack: end!important;
+    -ms-flex-pack: end!important;
+    justify-content: flex-end!important;
+    background-image: url('https://vynosmozga.ru/img/wave3.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.game_around_start {
+    width: 100%;
+    height: 18vw;
+    display: flex;
+    -webkit-box-pack: end!important;
+    -ms-flex-pack: end!important;
+    justify-content: flex-end!important;
+    background-image: url('https://vynosmozga.ru/img/wave4.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: -1px;
+}
+
+.game-around-content {
+    background-color: var(--blue);
+}
+
+.rounded-circle {
+    width: 100%; 
+    height: auto; 
+    max-width: 300px;
+}
+
+.game_around_end {
+    width: 100%;
+    height: 18vw;
+    display: flex;
+    -webkit-box-pack: end!important;
+    -ms-flex-pack: end!important;
+    justify-content: flex-end!important;
+    background-image: url('https://vynosmozga.ru/img/wave5.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: -100px;
+    margin-top: -1px;
+}
+
+.footer_start {
+    width: 100%;
+    height: 14vw;
+    display: flex;
+    -webkit-box-pack: end!important;
+    -ms-flex-pack: end!important;
+    justify-content: flex-end!important;
+    background-image: url('https://vynosmozga.ru/img/wave6.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: -1px;
+}
+
+.social_block {
+    margin-right: 1.5vw;
+    height: 50px;
+    margin-top: 1.5vw;
+}
+
+.social_block a {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.social_block a:hover {
+    color: var(--orange);
+}
+
+.wrapper_image_hero .gradient {
+    background: linear-gradient(180deg, transparent -40%, var(--blue) 100%);
+    -webkit-box-pack: end!important;
+    -ms-flex-pack: end!important;
+    justify-content: flex-end!important;
+}
+
+.menuButton {
+    background-color: var(--orange);
+    height: 50px;
+    max-width: 350px;
+    width: 100%;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+    color: var(--blue);
+}
+
+.menuButton:hover {
+    background-color: var(--blue);
+    color: var(--orange);
+    box-shadow: inset 0 0 0 3px var(--blue);
+}
+
+.menuButton h3 {
+    margin: 0;
+    font-size: 35px;
+    font-family: 'Comfortaa', cursive;
+}
+
+.whatIs .box .top-text h1 {
+    width: 100%;
+    margin: 50px auto;
+    font-size: 62px; 
+    line-height: 90px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+}
+
+.whatIs .box .top-text #typing {
+    font-size: 60px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+}
+
+.accordion-button , .accordion-body, .cardGame .lead {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+}
+
+.cardGame .lead {
+    color: var(--white);
+    text-align: center;
+    font-size: 22px;
+}
+
+#faq h3 {
+    margin-bottom: 40px;
+}
+
+#faq .accordion {
+    font-size: 22px;
+}
+
+.accordion-flush .accordion-item .accordion-button {
+    font-size: 22px;
+}
+
+.invisible {
+    display: none;
+}
+
+.reviews_header {
+    width: 100%;
+}
+
+.review_prev, .review_next {
+    width: 10%;
+    color: var(--white);
+    text-align: center;
+    padding: 50px 0;
+    cursor: pointer;
+}
+
+.review_wrapper {
+    width: 70%;
+    display: flex;
+    align-items: center;
+}
+
+.header_review {
+    width: 30%;
+    padding: 30px;
+}
+
+.header_review h3 {
+    color: var(--white);
+}
+
+.raiting {
+    color: var(--orange);
+    font-size: 20px;
+}
+
+.text_review p {
+    margin: 0;
+    color: var(--white);
+}
+
+.reviews_block {
+    width: 100%;
+    height: 100%;
+    background-color: var(--blue);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 100px 0;
+}
+
+.review {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+    position: relative;
+    z-index: 2;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.review .content {
+    padding: 30px 50px;
+}
+
+.author_review {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.text_review {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 0;
+    margin-top: 14px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.heading {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    margin-top: 30px;
+}
+
+.cardGame {
+    width: 60%;
+}
+
+.rounded-btn-1 {
+    width: 40%;
+}
+
+.rounded-btn-2 {
+    width: 20%;
+}
+
+.btn-cta-reg-outer {
+    background-color: var(--blue);
+}
+
+.btn-cta-reg {
+    color: white;
+    background-color: var(--orange);
+    border-radius: 2px;
+    width: 350px; 
+    height: 3rem;
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+.btn-cta-reg:hover {
+    box-shadow: 0 0 30px rgba(255,255,255,0.5);
+    color: var(--white);
+}
+
+.btn-cta-reg p {
+    font-size: 1.5rem;
+}
+
+.btn-trigger-modal {
+    background-color: var(--blue);
+    color: var(--white);
+    width: 350px;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.btn-trigger-modal:hover {
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    color: var(--white);
+}
+
+.prefs_order {
+    text-align: center;
+    padding-top: 70px;
+}
+
+.prefs_row {
+    display: block;
+    width: 100%;
+}
+
+.prefs_do {
+    display: flex;
+    justify-content: space-between;
+}
+
+.emoji_card {
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+}
+
+.emoji_card img {
+    height: 130px;
+    width: auto;
+}
+
+.prefs_header {
+    padding-top: 20px;
+}
+
+.calendar-outer {
+    width: 25vw; 
+    max-width: 350px; 
+    min-width: 220px; 
+    background-color: var(--white); 
+    border: 1px solid #c0c0c0; 
+    padding: 6px; 
+    margin-right: auto; 
+    margin-left: auto;
+}
+
+#calendar {
+    width: 100%;
+    font: monospace;
+    line-height: 1.2em;
+    font-size: 17px;
+    text-align: center;
+}
+
+#calendar thead tr:last-child {
+    font-size: small;
+    color: rgb(85, 85, 85);
+}
+
+#calendar thead tr:nth-child(1) td:nth-child(2) {
+    color: rgb(50, 50, 50);
+}
+
+#calendar thead tr:nth-child(1) td:nth-child(1):hover, #calendar thead tr:nth-child(1) td:nth-child(3):hover {
+    cursor: pointer;
+}
+
+#calendar tbody td {
+    color: rgb(44, 86, 122);
+}
+
+#calendar tbody td:nth-child(n+6), #calendar .holiday {
+    color: rgb(231, 140, 92);
+}
+
+#calendar tbody td.today {
+    background: var(--orange);
+    color: var(--white);
+}
+
+.box {
+    display: table;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.box:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255);
+    z-index: 0;
+}
+
+.box .top-text {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    text-align: center;
+}
+
+.box .top-text h1 {
+    position: aboslute;
+    width: 80%;
+    margin:50px auto;
+    font-size: 50px;
+    line-height: 55px;
+}
+
+#typing {
+    font-size: 5vh;
+    font-weight: 400;
+}
+
+.typed-cursor {
+    opacity: 1;
+    font-weight: 100;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% { 
+        opacity:1; 
+    }
+    50% { 
+        opacity:0; 
+    }
+    100% { 
+        opacity:1;
+    }
+}
+
+@media (max-width: 450px) {
+    .whatIs .box .top-text h1 {
+        width: 100%;
+        margin: 50px auto;
+        font-size: 32px;
+        line-height: 38px;
+    }
+    
+    .whatIs .box .top-text #typing {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 600px){
+    .emoji_card img {
+        height: 80px;
+    }
+}
+
+@media (max-width: 800px) {
+    .wrapper_image_hero {
+        height: 300px;
+    }
+    
+    .sponsor {
+        width: 100px;
+        height: 75px;
+    }
+    
+    .wrapper_image_hero .gradient {
+        -webkit-box-pack: center!important;
+        -ms-flex-pack: center!important;
+        justify-content: center!important;
+    }
+    
+    .social_wrapper {
+        height: 100px;
+    }
+    
+    .menuButton {
+        max-width: 350px;
+    }
+    
+    .whatIs .box .top-text h1 {
+        width: 100%;
+        margin: 50px auto;
+        font-size: 42px;
+        line-height: 50px;
+    }
+    
+    .whatIs .box .top-text #typing {
+        font-size: 40px;
+    }
+    
+    .header_review {
+        width: 100%;
+    }
+    .review_wrapper {
+        width: 100%;
+    }
+    
+    .reviews_block {
+        display: block;
+        padding: 0;
+    }
+    
+    h3 {
+        font-size: 35px;
+    }
+    
+    .author_review {
+        font-size: 20px;
+    }
+    
+    .text_review {
+        font-size: 18px;
+    }
+    
+    .raiting {
+        font-size: 16px;
+    }
+    
+    .review .content {
+        padding: 15px;
+    }
+    
+    .heading {
+        font-size: 30px;
+    }
+    
+    .cardGame {
+        width: 100%;
+    }
+    
+    .rounded-btn-1 {
+        width: auto;
+        max-width: 100px;
+    }
+    
+    .rounded-btn-2 {
+        width: 50%;
+        max-width: 100px;
+    }
+    
+    .btn-cta-reg, .btn-trigger-modal {
+        height: auto;
+        width: 250px!important;
+    }
+    
+    .btn-cta-reg p {
+        font-size: 17px;
+        margin: 0;
+    }
+}
+
+@media (min-width: 801px) and (max-width: 1200px) {
+    .sponsor {
+        width: 160px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 940px) {
+    .prefs_do {
+        flex-direction: column;
+    }
+    .emoji_card {
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .corp_row {
+        margin-top: 70px;
+    }
+}

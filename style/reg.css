@@ -1,0 +1,354 @@
+body {
+    overflow-x:hidden;
+}
+
+button, a, input[type=submit] {
+    font-family: 'Comfortaa', cursive;
+}
+
+h3 {
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Scada', sans-serif;
+}
+
+#reg-submit {
+    width: 100%;
+    background-color: var(--orange);;
+    color: var(--white);
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin-top: 30px;
+}
+
+#reg-submit:hover {
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    color: var(--white);
+}
+
+.hidden {
+    display: none!important;
+}
+
+.error {
+    font-size: 0.8rem;
+}
+
+.box .top-text {
+    vertical-align: middle;
+    position: relative;
+    text-align: center;
+}
+
+.bar-container {
+    display: flex;
+    justify-content: center;
+}
+
+.bar-item {
+    width:220px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.wrapper_image_hero {
+    width: 100%;
+    margin: 0;
+    height: 600px;
+    background-image: url('https://vynosmozga.ru/img/back-reg.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.open-info {
+    padding: 0 10px;
+}
+
+.social_wrapper {
+    width: 100%;
+    height: 9vw;
+    display: flex;
+    -webkit-box-pack: end!important;
+    -ms-flex-pack: end!important;
+    justify-content: flex-end!important;
+    background-image: url('https://vynosmozga.ru/img/wave1.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.reviews_wrapper {
+    height: 14vw;
+    display: flex;
+    -webkit-box-pack: end!important;
+    -ms-flex-pack: end!important;
+    justify-content: flex-end!important;
+    background-image: url('https://vynosmozga.ru/img/wave2.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: -1px;
+}
+
+.required {
+    color: var(--red);
+}
+
+.footer_start {
+    height: 14vw;
+    display: flex;
+    -webkit-box-pack: end!important;
+    -ms-flex-pack: end!important;
+    justify-content: flex-end!important;
+    background-image: url('https://vynosmozga.ru/img/wave6.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: -1px;
+    margin-top: -1px;
+}
+
+.social_block {
+    margin-right: 1.5vw;
+    height: 50px;
+    margin-top: 2vw;
+}
+
+.social_block a {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.social_block a:hover {
+    color: var(--orange);;
+}
+
+.wrapper_image_hero .gradient {
+    background: linear-gradient(180deg, transparent -40%, var(--blue) 100%);
+    -webkit-box-pack: end!important;
+    -ms-flex-pack: end!important;
+    justify-content: flex-end!important;
+}
+
+.menuButton {
+    background-color: var(--orange);;
+    height: 50px;
+    max-width: 350px;
+    width: 100%;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+    color: var(--blue);
+}
+
+.menuButton h3 {
+    margin: 0;
+    font-size: 35px;
+    font-family: 'Comfortaa', cursive;
+}
+
+.ots-l {
+    width: 30px;
+}
+
+.btn-bar {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    background-color: var(--white);
+    color: var(--blue);
+    border: 1px solid var(--blue);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0 auto;
+    list-style-type: none;
+}
+
+.btn-bar:hover {
+    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+}
+
+.btn-bar:focus {
+    outline: 0 solid;
+}
+
+.btn-bar.selected {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.btn-bar img {
+    border-radius: 8px;
+}
+
+.bar-item a {
+    margin-top: 10px; 
+    width: 200px; 
+    border-radius: 8px; 
+    background-color: var(--white);
+    color: var(--blue); 
+    border: 1px solid var(--blue);
+}
+
+.btn-people {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--white);
+    color: var(--blue);
+    border: 1px solid var(--blue);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.btn-people:hover {
+    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+}
+
+.btn-people:focus {
+    outline: 0 solid;
+}
+
+.btn-people.selected {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.sponsors_container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sponsor {
+    width: 100px;
+    height: 75px;
+}
+
+.sponsor img {
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid var(--light_grey);;
+}
+
+.sponsors_start {
+    width: 100%;
+    height: 10vw;
+    display: flex;
+    -webkit-box-pack: end !important;
+    -ms-flex-pack: end !important;
+    justify-content: flex-end !important;
+    background-image: url(https://vynosmozga.ru/img/wave7.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.sponsors_row {
+    background-color: var(--orange);;
+}
+.blue-back {
+    background-color: var(--blue);
+}
+
+.light-back {
+    background-color: var(--white);
+}
+
+.table_rank {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+}
+
+.table_rank td {
+    border-bottom: 0;
+}
+
+.table_rank th {
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.table_rank th[scope=row] {
+    border-top: 1px solid var(--light_grey);
+}
+
+.menuButton:hover {
+    background-color: var(--blue);
+    color: var(--orange);
+    box-shadow: inset 0 0 0 3px var(--blue);
+}
+
+.review_wrapper {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reviews_block {
+    height: 100%;
+    background-color: var(--blue);
+    align-items: center;
+    display: block;
+}
+
+.reviews_block .content {
+    color: white;
+}
+
+.reserve {
+    color: var(--red);
+}
+
+@media (max-width: 850px) {
+    h3 {
+        font-size: 35px;
+    }
+    
+    .wrapper_image_hero {
+        height: 300px;
+    }
+    
+    #form .col {
+        margin: 10px 5%;
+    }
+    
+    .wrapper_image_hero .gradient {
+        -webkit-box-pack: center!important;
+        -ms-flex-pack: center!important;
+        justify-content: center!important;
+    }
+    
+    .social_wrapper {
+        height: 100px;
+    }
+    
+    .social_block {
+        margin-top: -0.5vw;
+    }
+    
+    .menuButton {
+        max-width: 350px;
+    }
+    
+    .ots-l {
+        width: 100%;
+    }
+    
+    .review_wrapper {
+        width: 100%;
+    }
+    
+    .reviews_block {
+        display: block;
+        padding: 0;
+    }
+}

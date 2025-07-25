@@ -1,0 +1,17 @@
+Options -Indexes
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php56” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php56___lsphp .php .php5 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteRule ^reg.php$ /reg/ [QSA,L]
+RewriteRule ^m/reg.php$ /reg/ [QSA,L]
+RewriteRule ^m/$ / [QSA,L]
+RewriteRule ^reg/([a-zA-Z0-9-]*)-([0-9]*)$ /reg/index.php?gametype=$1&gamenum=$2 [QSA,L]
+RewriteRule ^m/reg/([a-zA-Z0-9-]*)-([0-9]*)$ /reg/index.php?gametype=$1&gamenum=$2 [QSA,L]
+RewriteRule ^rank/([0-9]*)$ /rank/index.php?idRank=$1 [QSA,L]
+</IfModule>

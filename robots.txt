@@ -1,0 +1,6 @@
+# главные параметры
+User-agent: *
+Disallow: /admin
+Host: https://vynosmozga.ru
+Sitemap: https://vynosmozga.ru/sitemap.xml
+Crawl-delay: 0.2
