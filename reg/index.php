@@ -28,9 +28,7 @@
             header('Content-Type: text/html; charset=utf-8');
             date_default_timezone_set('Europe/Moscow');
             
-            function textMonth(
-                $month
-            ) {
+            function textMonth($month) {
                 $nameMonthsArray = ["", "января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
                 return $nameMonthsArray[(int)$month];
             }
@@ -45,61 +43,26 @@
                 return $weekDaysArray[$weekDay];
             }
             
-            function displayCardDate(
-                $date
-            ) {
-                $dateParts = getDateParts($date);
-                return (int)$dateParts['day']." ".textMonth($dateParts['month'])." (".textDayOfWeek($dateParts['day'], $dateParts['month'], $dateParts['year']).") в ".$dateParts['hour'].":".$dateParts['minute'];
+            function displayCardDate($date) {
+                $dateParts = date_parse($date);
+                return (int)$dateParts['day']." ".textMonth($dateParts['month'])." (".textDayOfWeek($dateParts['day'], $dateParts['month'], $dateParts['year']).") в ".$dateParts['hour'].":".(($dateParts['minute'] >= 10) ? $dateParts['minute'] : "0".$dateParts['minute']);
             }
             
-            //array(day, month, year, hour, minute)
-            function getDateParts(
-                $date
-            ) {
-                $return = array();
-                $partsOne = explode(' ', $date);
-                $days = $partsOne[0];
-                $time = $partsOne[1];
-                
-                $dateG = explode('-', $days);
-                $return['day'] = $dateG[2];
-                $return['month'] = $dateG[1];
-                $return['year'] = $dateG[0];
-                
-                $timeG = explode(':', $time);
-                $return['hour'] = $timeG[0];
-                $return['minute'] = $timeG[1];
-                
-                return $return;
+            function displayPastDate($date) {
+                $dateParts = date_parse($date);
+                return (int)$dateParts['day']." ".textMonth($dateParts['month'])." ".$dateParts['year']." года";
             }
             
-            function isMoreThanNow(
-                $fullDate
-            ) {
-                $date = explode(" ", $fullDate)[0];
-                $time = explode(" ", $fullDate)[1];
-                    
-                $date = explode('-',$date);
-                $day = (string)$date[2];
-                $month = (string)$date[1];
-                $year = (string)$date[0];
-                $dateToCompare = $year.$month.$day;
-                
-                $time = explode(':',$time);
-                $hour = (string)$time[0];
-                $minute = (string)$time[1];
-                $timeToCompare = $hour.$minute;
-                
-                
-                $dayNow = (string)date(d);
-                $monthNow = (string)date(m);
-                $yearNow = (string)date(Y);
-                $hourNow = date(G);
-                $minuteNow = date(i);
-                $dateNow = $yearNow.$monthNow.$dayNow;
-                $timeNow = $hourNow.$minuteNow;
-                
-                return (($dateToCompare == $dateNow and $timeToCompare >= $timeNow) or ($dateToCompare > $dateNow));
+            function isEarlier($fullDate) {
+                $dateParts = date_parse($fullDate);
+                $dateToCompare = mktime($dateParts['hour'], $dateParts['minute'], 0, $dateParts['month'], $dateParts['day'], $dateParts['year']);
+                return ($dateToCompare < time());
+            }
+            
+            function isLater($fullDate) {
+                $dateParts = date_parse($fullDate);
+                $dateToCompare = mktime($dateParts['hour'], $dateParts['minute'], 0, $dateParts['month'], $dateParts['day'], $dateParts['year']);
+                return ($dateToCompare > time());
             }
             
             $getClosestGameInfoQuery = mysql_query("
@@ -173,7 +136,6 @@
             $cost = $currentGameInfoResult['cost'];
             $minPeople = $currentGameInfoResult['min_people'];
             $maxPeople = $currentGameInfoResult['max_people'];
-            $barIds = str_replace("/", ",", $barIds);
             
             //bars
             $barsCountInGame = count(explode(",", $barIds));
@@ -225,8 +187,8 @@
             }
             
             if (!empty($dateGame)) {
-                if (isMoreThanNow($dateGame)) {
-                    if (isMoreThanNow($dateOpen)) {
+                if (isLater($dateGame)) {
+                    if (isLater($dateOpen)) {
                         //Регистрация ещё закрыта
                         $open_block_img = "../img/lock.png";
                         $open_block_h3 = "Регистрация закрыта";
@@ -242,8 +204,8 @@
                 } else {
                     //Игра уже прошла
                     $open_block_img = "../img/finish-flag.png";
-                    $open_block_h3 = "Игра уже прошла";
-                    $open_block_h4 = "Вы можете перейти <a href='".$regLink."'>к ближайшей игре</a>";
+                    $open_block_h3 = $nameGame." уже прошла";
+                    $open_block_h4 = "Шикарно провели время ".displayPastDate($dateGame)."<br> Вы можете перейти <a href='".$regLink."'>к ближайшей игре</a>";
                     $footer_color = "light-back";
                 }
             } else {
@@ -315,7 +277,7 @@
                             </h4>
                         </div>
                         <? 
-                            if (!empty($dateGame) and isMoreThanNow($dateGame) and !isMoreThanNow($dateOpen)) {
+                            if (!empty($dateGame) and isLater($dateGame) and isEarlier($dateOpen)) {
                                 ?>
                                     <div class="form-row">
                                         <div class="col"></div>
@@ -515,7 +477,7 @@
                                                                                 </thead>
                                                                                 <tbody> 
                                                                                     <?
-                                                                                        foreach ($listTeams as $key => $team){
+                                                                                        foreach ($listTeams as $key => $team) {
                                                                                             ?>
                                                                                                 <tr>
                                                                                                     <th scope="row">
