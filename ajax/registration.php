@@ -29,7 +29,6 @@
     $cost = $gameInfoResult['cost'];
     $minPeople = $gameInfoResult['min_people'];
     $maxPeople = $gameInfoResult['max_people'];
-    $barIds = str_replace("/", ",", $barIds);
     
     $getGameTypeQuery = mysql_query("
         SELECT 
@@ -53,33 +52,16 @@
     $nameGame = str_replace("{number}", "".$number, $nameGame);
     $friendlyURL = $gameTypeResult['friendly_url']."-".str_replace("#","",$number);
 
-    function isMoreThanNow(
-        $fullDate
-    ) {
-        $date = explode(" ", $fullDate)[0];
-        $time = explode(" ", $fullDate)[1];
-            
-        $date = explode('-',$date);
-        $day = (string)$date[2];
-        $month = (string)$date[1];
-        $year = (string)$date[0];
-        $dateToCompare = $year.$month.$day;
-        
-        $time = explode(':',$time);
-        $hour = (string)$time[0];
-        $minute = (string)$time[1];
-        $timeToCompare = $hour.$minute;
-        
-        
-        $dayNow = (string)date(d);
-        $monthNow = (string)date(m);
-        $yearNow = (string)date(Y);
-        $hourNow = date(G);
-        $minuteNow = date(i);
-        $dateNow = $yearNow.$monthNow.$dayNow;
-        $timeNow = $hourNow.$minuteNow;
-        
-        return (($dateToCompare == $dateNow and $timeToCompare >= $timeNow) or ($dateToCompare > $dateNow));
+    function isEarlier($fullDate) {
+        $dateParts = date_parse($fullDate);
+        $dateToCompare = mktime($dateParts['hour'], $dateParts['minute'], 0, $dateParts['month'], $dateParts['day'], $dateParts['year']);
+        return ($dateToCompare < time());
+    }
+    
+    function isLater($fullDate) {
+        $dateParts = date_parse($fullDate);
+        $dateToCompare = mktime($dateParts['hour'], $dateParts['minute'], 0, $dateParts['month'], $dateParts['day'], $dateParts['year']);
+        return ($dateToCompare > time());
     }
     
     $bar = $_POST['bar'];
@@ -90,7 +72,7 @@
     $comment = $_POST['comment'];
     $teamName = $comandName;
     
-    if (isMoreThanNow($dateGame) && !isMoreThanNow($dateOpen)){
+    if (isLater($dateGame) && isEarlier($dateOpen)) {
         if (!in_array($bar, explode(',', $barIds))) {
             sendAnswer(400, "В данном баре игра не проводится");
             die();
@@ -205,9 +187,7 @@
         );
     }
 
-    function getLeftPlacesText(
-        $leftPlaces
-    ) {
+    function getLeftPlacesText($leftPlaces) {
         $result = "";
         if ($leftPlaces > 0) {
             if (($leftPlaces >= 2 and $leftPlaces <= 4) or ($leftPlaces >= 22 and $leftPlaces <= 24))
